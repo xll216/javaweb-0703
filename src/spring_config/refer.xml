@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--配置dao层-->
+    <bean id="followDao" class="com.lanou.crm.refer.dao.impl.FollowDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="referDao" class="com.lanou.crm.refer.dao.impl.ReferDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+</beans>

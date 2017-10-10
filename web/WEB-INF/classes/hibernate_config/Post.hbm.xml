@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!--职务表-->
+    <class name="com.lanou.crm.hr.domain.Post">
+        <id name="postId" length="32">
+            <generator class="native"/>
+        </id>
+        <property name="postName" length="100"/>
+
+        <!--一个部门对应多个职务 一对多双向-->
+        <many-to-one name="department" column="depId" lazy="false"/>
+
+        <!--一个职务对应多个员工 一对多双向-->
+        <set name="staffSet" cascade="save-update" lazy="false">
+            <key column="postId"></key>
+            <one-to-many class="com.lanou.crm.hr.domain.Staff"/>
+        </set>
+    </class>
+
+</hibernate-mapping>

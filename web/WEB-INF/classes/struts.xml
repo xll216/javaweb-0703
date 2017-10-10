@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.configuration.xml.reload" value="true"/>
+    <!--配置struts2的常量-->
+    <constant name="struts.devMode" value="true"/>
+
+    <!--将action的创建交给spring完成-->
+    <constant name="struts.objectFactory" value="spring"></constant>
+
+    <package name="common" extends="json-default">
+        <!--全局结果视图，登录、错误、主界面-->
+        <global-results>
+            <result name="login">/pages/login.jsp</result>
+            <result name="error">/pages/error.jsp</result>
+            <result name="success">/pages/frame.jsp</result>
+        </global-results>
+    </package>
+
+    <!--引入其他的配置文件-->
+    <include file="struts_config/hr.xml"/>
+    <include file="struts_config/education.xml"/>
+
+</struts>

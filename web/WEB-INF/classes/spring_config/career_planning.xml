@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--配置dao层-->
+    <bean id="runoffDao" class="com.lanou.crm.career_planning.dao.impl.RunoffDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="stationDao" class="com.lanou.crm.career_planning.dao.impl.StationDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="studentDao" class="com.lanou.crm.career_planning.dao.impl.StudentDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+</beans>

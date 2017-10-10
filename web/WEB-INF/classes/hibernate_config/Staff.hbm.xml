@@ -1,0 +1,20 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!--员工表-->
+    <class name="com.lanou.crm.hr.domain.Staff">
+        <id name="staffId" length="32">
+            <generator class="native"/>
+        </id>
+        <property name="loginName" length="100"/>
+        <property name="loginPwd" length="100"/>
+        <property name="staffName" length="100"/>
+        <property name="gender" length="20"/>
+        <property name="onDutyDate"/>
+
+        <!--一个职务对应多个员工 一对多双向-->
+        <many-to-one name="post" column="postId" lazy="false"/>
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,15 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!--学生跟踪表-->
+    <class name="com.lanou.crm.refer.domain.Follow">
+        <id name="followId" length="32">
+            <generator class="native"/>
+        </id>
+        <property name="followTime"/>
+        <property name="content" length="1000"/>
+        <property name="staffID" length="32"/>
+        <property name="referID" length="32"/>
+    </class>
+</hibernate-mapping>

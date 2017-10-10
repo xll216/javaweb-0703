@@ -1,0 +1,18 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!--学生升级／转班信息表-->
+    <class name="com.lanou.crm.career_planning.domain.Station">
+        <id name="stationID">
+            <generator class="native"/>
+        </id>
+        <property name="studentID" length="32"/>
+        <property name="flag" length="50"/>
+        <property name="staffId" length="32"/>
+        <property name="createDate"/>
+        <property name="beforeClassId" length="32"/>
+        <property name="afterClassId" length="32"/>
+    </class>
+
+</hibernate-mapping>

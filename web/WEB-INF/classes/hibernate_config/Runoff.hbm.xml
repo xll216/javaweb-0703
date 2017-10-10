@@ -1,0 +1,17 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!--学生流失信息表-->
+    <class name="com.lanou.crm.career_planning.domain.Runoff">
+        <id name="runOffId" length="32">
+            <generator class="native"/>
+        </id>
+        <property name="studentId" length="32" not-null="true"/>
+        <property name="staffId" length="32"/>
+        <property name="createDate"/>
+        <property name="isRefund" length="20"/>
+        <property name="refundAmount" length="20"/>
+        <property name="remark" length="20"/>
+    </class>
+</hibernate-mapping>

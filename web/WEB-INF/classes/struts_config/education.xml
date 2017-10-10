@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <!--针对人力资源部-->
+    <package name="education" extends="common" namespace="/education">
+        <!--课程类别操作：添加、编辑、获取列表-->
+        <action name="courseTypeAction_*" class="courseTypeAction" method="{1}">
+            <result name="addOrEditCourse" type="redirectAction">courseTypeAction_findAll</result>
+            <result name="editCourse">/pages/coursetype/addOrEditCourse.jsp</result>
+            <result name="findAll">/pages/coursetype/listCourse.jsp</result>
+        </action>
+    </package>
+</struts>

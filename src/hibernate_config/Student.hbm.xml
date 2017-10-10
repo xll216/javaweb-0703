@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!--学生信息表-->
+    <class name="com.lanou.crm.career_planning.domain.Student">
+        <id name="studentId" length="32">
+            <generator class="native"/>
+        </id>
+        <property name="name" length="50"/>
+        <property name="telephone" length="50"/>
+        <property name="identity" length="18"/>
+        <property name="qq" length="32"/>
+        <property name="gender" length="1"/>
+        <property name="mustTuition"/>
+        <property name="actualTuition"/>
+        <property name="email" length="50"/>
+        <property name="school" length="100"/>
+        <property name="education" length="50"/>
+        <property name="professional" length="50"/>
+        <property name="identityAddress" length="100"/>
+        <property name="address" length="100"/>
+        <property name="remark" length="200"/>
+        <property name="homeTelephone" length="11"/>
+        <property name="homeContact" length="50"/>
+        <property name="status" length="50"/>
+        <property name="classID" length="32"/>
+        <property name="referID" length="32"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <!--针对人力资源部-->
+    <package name="hr" extends="common" namespace="/hr">
+        <!--员工操作：添加、编辑、获取列表、注册、修改密码-->
+        <action name="staffAction_*" class="staffAction" method="{1}">
+            <result name="findAll">/pages/staff/listStaff.jsp</result>
+            <result name="input">/pages/staff/{1}.jsp</result>
+            <result name="editStaff">/pages/staff/{1}.jsp</result>
+            <result name="edit" type="redirectAction">staffAction_findAll</result>
+            <result name="addStaff">/pages/staff/addStaff.jsp</result>
+            <result name="updPwd" type="redirectAction">staffAction_logout</result>
+        </action>
+
+        <!--职务操作：添加、编辑、获取列表、注册、修改密码-->
+        <action name="postAction_*" class="postAction" method="{1}">
+            <result name="findAll">/pages/post/listPost.jsp</result>
+            <result name="addOrEditPost">/pages/post/{1}.jsp</result>
+            <result name="update" type="redirectAction">postAction_findAll</result>
+
+
+            <result name="success" type="json">
+                <param name="root">posts</param>
+                <param name="includeProperties">
+                    \[\d\]\.postId,
+                    \[\d\]\.postName
+                </param>
+            </result>
+        </action>
+
+        <action name="test" class="testAction">
+            <result name="success">/test.jsp</result>
+        </action>
+    </package>
+</struts>

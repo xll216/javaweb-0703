@@ -1,0 +1,23 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!--学生咨询表-->
+    <class name="com.lanou.crm.refer.domain.Refer">
+        <id name="referId" length="32">
+            <generator class="native"/>
+        </id>
+        <property name="name" length="50"/>
+        <property name="telephone" length="50"/>
+        <property name="qq" length="32"/>
+        <property name="createDate"/>
+        <property name="intentionLevel" length="50"/>
+        <property name="courseTypeId" length="32"/>
+        <property name="classId" length="32"/>
+        <property name="source" length="50"/>
+        <property name="status" length="50"/>
+        <property name="remark" length="500"/>
+        <property name="staffId" length="32"/>
+    </class>
+
+</hibernate-mapping>
